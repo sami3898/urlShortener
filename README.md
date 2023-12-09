@@ -89,6 +89,7 @@ npm start
 ```
 
 Make sure to configure your database settings in the project ```.env``` file
+
 <img width="465" alt="image" src="https://github.com/sami3898/urlShortener/assets/32996863/1f1a98fc-75d6-4fda-a751-82d2b625c26f">
 
 
