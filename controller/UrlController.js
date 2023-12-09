@@ -6,7 +6,7 @@ const utils = require("../utils")
 const shortUrl = async (req, res) => {
     const { originalUrl } = req.body
     const shortId = shortid.generate()
-    const baseUrl = `http://localhost:8000/` // Your base url here
+    const baseUrl = `http://localhost:8000` // Your base url here
 
     if (utils.validateUrl(originalUrl)) {
         try {
@@ -14,7 +14,7 @@ const shortUrl = async (req, res) => {
             if (url) {
                 res.json(url)
             } else {
-                const newUrl = baseUrl + shortId;
+                const newUrl = `${baseUrl}/api/id/${shortId}`;
                 url = new Urls({
                     originalUrl,
                     shortUrl: newUrl,
