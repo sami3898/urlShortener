@@ -50,5 +50,19 @@ const redirectUrl = async (req, res) => {
 }
 
 // TODO: list all urls
+const allUrls = async (req,res) => {
+    try {
+        let urls = await Urls.find()
+        if (urls.length > 0) {
+            res.status(200).json({message: "All URLs", urls})
+        } else {
+            res.status(404).json({ error: "No URLs available"})
+        }
+        
+    } catch (error) {
+        res.status(500).json({ error: "Server Error"})
+        console.log(error)
+    }
+}
 
-module.exports = { shortUrl, redirectUrl }
+module.exports = { shortUrl, redirectUrl,  allUrls}
