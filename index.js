@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
     res.json({ message: "This is sample route" })
 })
 
-app.use("/api", routes)
+app.use("/", routes)
 
 app.listen(PORT, async () => {
     console.log("PORT IS RUNNING ON ", PORT);
